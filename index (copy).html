@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>REMOTELY AERONAUTICAL METEOROLOGY INFORMATION SERVICE CENTER</title>
+<link rel="shortcut icon" href="favicon.ico" />
+  <link rel="stylesheet" href="assets/jquery-ui/jquery-ui.css">
+  <link rel="stylesheet" href="assets/icons.css">
+  <link rel="stylesheet" href="assets/style.css">
+    <link id="bootstrap" href="assets/bootstrap/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="assets/bootstrap/bootstrap-theme.css" rel="stylesheet" type="text/css" />
+	<link href="assets/plugins/uniform/uniform.default.css" type="text/css" rel="stylesheet" />
+  <script src="assets/jquery.js"></script>
+  <script src="assets/jquery-ui/jquery-ui.js"></script>
+  <script src="assets/script.js"></script>
+  <script type="text/javascript" src="assets/plugins/uniform/jquery.uniform.min.js"></script>
+    <script type="text/javascript" src="assets/bootstrap/bootstrap.min.js"></script>  
+    <script src="assets/plugins/highcharts/code/highcharts.js"></script>
+<script src="assets/plugins/highcharts/code/highcharts-more.js"></script>
+<script src="assets/plugins/highcharts/code/modules/exporting.js"></script>
+  <script>
+  $( function() {
+    $( "#tabs" ).tabs({
+      beforeActivate: function(event, ui) {
+      	$(ui.oldPanel.selector).html('')
+      },
+      activate: function (event, ui) {
+      },
+      beforeLoad: function( event, ui ) {
+        ui.jqXHR.fail(function() {
+          ui.panel.html(
+            "Couldn't load this tab. We'll try to fix this as soon as possible. " +
+            "If this wouldn't be a demo." );
+        });
+      }
+    });
+  } );
+  </script>
+</head>
+<body onload="startTime()">
+<div id="content">
+  <div class="digital-wrapper">
+  <div class="digital-time"></div>
+  </div>
+	<div id="header">
+	<div class="title"><h1>REMOTELY AERONAUTICAL METEOROLOGY INFORMATION <br /> SERVICE CENTER</h1></div>
+	<div class="logo"><img src="assets/logo.png"></div>
+	<div class="menu-dropdown">
+	<div class="dropdown">
+    <button class="btn btn-primary dropdown-toggle" id="menu1" type="button" data-toggle="dropdown"><span class="icon16 icon-menu icomoon-icon-menu"></span> MENU
+    <span class="caret"></span></button>
+    <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+      <li role="presentation"><a role="menuitem" tabindex="-1" href="#"><span class="icon16 icomoon-icon-cogs"></span> SETTINGS</a></li>
+      <li role="presentation"><a role="menuitem" tabindex="-1" href="#"><span class="icon16 icomoon-icon-users"></span> USER</a></li>
+      <li role="presentation" class="divider"></li>
+      <li role="presentation"><a role="menuitem" tabindex="-1" href="#" onclick="return confirm('user, are you sure you want to logout?');"><span class="icon16 icomoon-icon-exit"></span> LOGOUT?</a></li>    
+    </ul>
+  </div>
+  </div>
+  </div>
+	<div class="clear"></div>
+<div id="tabs">
+  <ul>
+    <li><a href="tab.html#tabs-1" title="JEMBER">JEMBER</a></li>
+    <li><a href="tab.html#tabs-2" title="SUMENEP">SUMENEP</a></li>
+    <li><a href="tab.html#tabs-3" title="BANYUWANGI">BANYUWANGI</a></li>
+    <li><a href="tab.html#tabs-4" title="BAWEAN">BAWEAN</a></li>
+    <li><a href="tab.html#tabs-5" title="MALANG">MALANG</a></li>
+    <li><a href="tab.html#tabs-6" title="MADIUN">MADIUN</a></li>
+  </ul>
+</div>
+<div class="footer">
+	&copy; 2018 BADAN METEOROLOGI, KLIMATOLOGI, DAN GEOFISIKA
+</div>
+</div>
+ 
+</body>
+</html>
